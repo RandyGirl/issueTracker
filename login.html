@@ -7,30 +7,28 @@
     <title>Issue Tracker</title>
     <script src="./script/script.js"></script>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="background">
+    <div class="wrapper">
         <div class="login" id="login-container">
-            <h1>Log in to Issue Tracker</h1>
+            <h1>Login</h1>
             <form  method="get" id="login"> <!--action="./test.html" -->
                 <input placeholder="Enter your username" id="username">
-                <br>
                 <input placeholder="Enter your password" id="password">
-                <br>
-                <button type="submit">Log in</button>
+                <button type="submit">Login</button>
             </form>
             <a href="#" id="toRegister">Don't have an account? Register</a>
         </div>
         <div class="register hidden" id="register-container">
-            <h1>Register in to Issue Tracker</h1>
+            <h1>Register</h1>
             <form method="get" id="register">
                 <input placeholder="Enter username">
-                <br>
                 <input placeholder="Enter email">
-                <br>
                 <input placeholder="Enter password">
-                <br>
-                <input type="submit" value="Register">
+                <button type="submit">Register</button>
             </form>
             <a href="#" id="toLogin">Have an account already? Log in</a>
         </div>
