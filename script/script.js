@@ -17,9 +17,9 @@ document.addEventListener("DOMContentLoaded", ()=>{
         const usernameField = document.getElementById("loginUsername").value;
         const passwordField = document.getElementById("loginPassword").value;
 
-        if(usernameField === "test" && passwordField === "Test123"){
+        if(usernameField === "test" && passwordField === "Test123?"){
             event.preventDefault();
-            window.location.replace("http://127.0.0.1:5500/test.html");
+            window.location.assign("http://127.0.0.1:5500/test.html");
         } else {
             event.preventDefault();
             loginError.innerHTML = "Invalid Credentials";
@@ -33,43 +33,42 @@ document.addEventListener("DOMContentLoaded", ()=>{
         const usernameField = document.getElementById("registerUsername");
         const emailField = document.getElementById("registerEmail");
         const passwordField = document.getElementById("registerPassword");
-        let flag = true;
+        let isUsernameCorrect = false;
+        let isEmailCorrect = false;
+        let isPasswordCorrect = false;
 
         if(usernameField.value.length < 3){
             event.preventDefault();
             registerUsernameError.innerHTML = "Username is too short";
             usernameField.classList.add("error-border");
-            flag = false;
         }else{
             usernameField.classList.remove("error-border");
             registerUsernameError.innerHTML = "";
-            flag = true;
+            isUsernameCorrect = true;
         }
 
         if(!isValidEmail(emailField.value.trim())){
             event.preventDefault();
             registerEmailError.innerHTML = "Invalid email";
             emailField.classList.add("error-border");
-            flag = false;
         }else{
             emailField.classList.remove("error-border");
             registerEmailError.innerHTML = "";
-            flag = true;
+            isEmailCorrect = true;
         }
 
         if(!isValidPassword(passwordField.value.trim())){
             event.preventDefault();
-            registerPasswordError.innerHTML = "Password must contain uppercase letter and '?' !";
+            registerPasswordError.innerHTML = "Password must contain uppercase and lowercase letters, number and '?'";
             passwordField.classList.add("error-border");
-            flag = false;
         }else{
             passwordField.classList.remove("error-border");
             registerPasswordError.innerHTML = "";
-            flag = true;
+            isPasswordCorrect = true;
         }
 
-        if(flag){
-            window.location.replace("http://127.0.0.1:5500/test.html");
+        if(isUsernameCorrect && isEmailCorrect && isPasswordCorrect){
+            window.location.assign("http://127.0.0.1:5500/test.html");
         }
     })
 
